@@ -1,7 +1,8 @@
-import { IStatisticItem, IStatisticWithCountry } from './data';
+import { IStatisticItem, IStatisticWithCountry, CountriesInfo } from "./data";
 
 export interface IRequests {
-    latestStatistic: ()=>Promise<IStatisticItem>,
-    mostInfected: (count: number)=>Promise<IStatisticWithCountry[]>,
-    allCases: ()=>Promise<any>
+  latestStatistic: () => Promise<IStatisticItem>;
+  mostInfected: (count: number) => Promise<IStatisticWithCountry[]>;
+  allCountries: () => PromiseLike<IStatisticWithCountry[] | any>;
+  getCountriesInformation: () => Promise<CountriesInfo>;
 }

@@ -1,10 +1,22 @@
-import React from 'react';
-import './App.css';
+import React from "react";
+import "./App.css";
 
-import { FullStatisticContainer } from './pages/full-statistic';
+import { RouteProviderComponent } from "./components/route";
+import { FullStatisticContainer } from "./pages/full-statistic";
+import { AllCountriesStatisticContainer } from "./pages/all-countries";
+import { BaseLayoutContainer } from "./layouts/base";
 
 function App() {
-  return <FullStatisticContainer />
+  return (
+    <RouteProviderComponent>
+      <BaseLayoutContainer key="/">
+        <FullStatisticContainer />
+      </BaseLayoutContainer>
+      <BaseLayoutContainer key="/countries">
+        <AllCountriesStatisticContainer />
+      </BaseLayoutContainer>
+    </RouteProviderComponent>
+  );
 }
 
 export default App;

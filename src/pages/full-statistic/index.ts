@@ -1,1 +1,1 @@
-export { FullStatisticContainer } from './container';
+export { FullStatisticContainer } from "./container";
